@@ -1,0 +1,13 @@
+<%= form_with(model: [@article, @article.comments.build], local: true) do |form| %>
+  <p>
+    <%= form.label :commenter, "Commenter Name" %>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body, "Comment Body" %>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%=  form.submit "Submit", disable_with: 'Submiting...' %>
+  </p>
+<% end %>

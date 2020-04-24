@@ -1,0 +1,27 @@
+<h1 align="center">Log In</h1>
+
+<%= form_with scope: :session, local: true, :html => {:class => "form-horizontal"}, url: login_path do |form| %>
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <%= form.label :email %>
+    </div>
+    <div class="col-sm-8">
+      <%= form.email_field :email,  class: "form-control", placeholder: "Enter email" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label"> 
+      <%= form.label :password %>
+    </div>
+    <div class="col-sm-8">
+      <%= form.password_field :password,  class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit("Log in", class: 'btn btn-primary btn-lg') %>
+    </div>
+  </div>
+<% end %>
